@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <title>员工表</title>
+  <link rel="stylesheet" href="css/pintuer.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/pintuer.js"></script>
+</head>
+<body>
+<form method="post" action="">
+  <div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 员工表</strong></div>
+    <div class="padding border-bottom">
+      <ul class="search">
+          <li>搜索：</li>
+          <li>性别
+            <select name="s_ishome" class="input" onchange="changesearch()" style="width:60px; line-height:17px; display:inline-block">
+              <option value="1">男</option>
+              <option value="0">女</option>
+            </select>
+            &nbsp;&nbsp;
+            职位
+            <select name="s_isvouch" class="input" onchange="changesearch()"  style="width:80px; line-height:17px;display:inline-block">
+              <option value="">其他</option>
+              <option value="1">店员</option>
+              <option value="0">经理</option>
+            </select>
+            &nbsp;&nbsp;
+            编号
+            <input type="search" class="input" style="width:40px; float:right;" value="" data-toggle="hover"  maxlength="5" data-place="right" />
+          </li>
+          <if condition="$iscid eq 1">
+            <li>
+              入职区间
+              <select name="cid" class="input" style="width:200px; line-height:17px;display:inline-block;" onchange="changesearch()">
+                <option value="">请选择区间</option>
+                <option value="">2010-2012</option>
+                <option value="">2012-2014</option>
+                <option value="">2014-2016</option>
+                <option value="">2016-2018</option>
+              </select>
+            </li>
+          </if>
+          <li>
+            <input type="search" class="input tips" placeholder="输入员工名" style="width:150px; float:left;" value="" data-toggle="hover" data-place="right" />
+            <a href="javascript:void(0)" class="button border-main icon-search" onclick="error()" > 搜索</a></li>
+      </ul>
+    </div>
+    <div class="padding border-bottom">
+      <ul class="search">
+        <li>
+          <button type="button"  class="button border-green" id="checkall"><span class="icon-check"></span> 反选</button>
+          <button type="submit" class="button border-red"><span class="icon-trash-o"></span> 批量删除</button>
+          <button type="button" class="button border-yellow"><span class="icon-hacker-news"></span>添加职员</button>
+          <button type="button" class="button border-blue"><span class="icon-print"></span>打印报表</button>
+        </li>
+      </ul>
+    </div>
+    <table class="table table-hover text-center">
+      <tr>
+        <th width="100">编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>职务</th>
+        <th>薪资</th>
+        <th>入职日期</th>
+        <th width="25%">备注</th>
+        <th width="120">详细信息</th>
+        <th>操作</th>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="id[]" value="1" />
+          1220</td>
+        <td>李四</td>
+        <td>男</td>
+        <td>店员</td>
+        <td>15k</td>
+        <td>2016-07-01</td>
+        <td>喵喵喵喵喵喵喵喵喵喵喵喵</td>
+        <td><a href="http://www.baidu.com">点击查看</a></td>
+        <td><div class="button-group"> <a class="button border-green" href="javascript:void(0)" onclick="return change(1)"><span class="icon-crop"></span> 修改</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="id[]" value="1" />
+          1221</td>
+        <td>张三</td>
+        <td>男</td>
+        <td>店员</td>
+        <td>15k</td>
+        <td>2016-07-01</td>
+        <td>喵喵喵喵喵喵</td>
+        <td><a href="http://www.baidu.com">点击查看</a></td>
+        <td><div class="button-group"> <a class="button border-green" href="javascript:void(0)" onclick="return change(1)"><span class="icon-crop"></span> 修改</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="id[]" value="1" />
+          1220</td>
+        <td>李四</td>
+        <td>男</td>
+        <td>店员</td>
+        <td>15k</td>
+        <td>2016-07-01</td>
+        <td>喵喵喵喵喵喵</td>
+        <td><a href="http://www.baidu.com">点击查看</a></td>
+        <td><div class="button-group"> <a class="button border-green" href="javascript:void(0)" onclick="return change(1)"><span class="icon-crop"></span> 修改</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="id[]" value="1" />
+          1221</td>
+        <td>张三</td>
+        <td>男</td>
+        <td>店员</td>
+        <td>15k</td>
+        <td>2016-07-01</td>
+        <td>喵喵喵喵喵喵</td>
+        <td><a href="http://www.baidu.com">点击查看</a></td>
+        <td><div class="button-group"> <a class="button border-green" href="javascript:void(0)" onclick="return change(1)"><span class="icon-crop"></span> 修改</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="id[]" value="1" />
+          1220</td>
+        <td>李四</td>
+        <td>男</td>
+        <td>店员</td>
+        <td>15k</td>
+        <td>2016-07-01</td>
+        <td>喵喵喵喵喵喵</td>
+        <td><a href="http://www.baidu.com">点击查看</a></td>
+        <td><div class="button-group"> <a class="button border-green" href="javascript:void(0)" onclick="return change(1)"><span class="icon-crop"></span> 修改</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="id[]" value="1" />
+          1221</td>
+        <td>张三</td>
+        <td>男</td>
+        <td>店员</td>
+        <td>15k</td>
+        <td>2016-07-01</td>
+        <td>喵喵喵喵喵喵</td>
+        <td><a href="http://www.baidu.com">点击查看</a></td>
+        <td><div class="button-group"> <a class="button border-green" href="javascript:void(0)" onclick="return change(1)"><span class="icon-crop"></span> 修改</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="id[]" value="1" />
+          1220</td>
+        <td>李四</td>
+        <td>男</td>
+        <td>店员</td>
+        <td>15k</td>
+        <td>2016-07-01</td>
+        <td>喵喵喵喵喵喵</td>
+        <td><a href="http://www.baidu.com">点击查看</a></td>
+        <td><div class="button-group"> <a class="button border-green" href="javascript:void(0)" onclick="return change(1)"><span class="icon-crop"></span> 修改</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="id[]" value="1" />
+          1221</td>
+        <td>张三</td>
+        <td>男</td>
+        <td>店员</td>
+        <td>15k</td>
+        <td>2016-07-01</td>
+        <td>喵喵喵喵喵喵</td>
+        <td><a href="http://www.baidu.com">点击查看</a></td>
+        <td><div class="button-group"> <a class="button border-green" href="javascript:void(0)" onclick="return change(1)"><span class="icon-crop"></span> 修改</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      </tr>
+      <!--能力有限，分页功能暂时无法实现-->
+      <td colspan="9"><div class="pagelist"> <a href="">上一页</a> <span class="current">1</span><a href="">2</a><a href="">3</a><a href="">下一页</a><a href="">尾页</a> </div></td>
+    </table>
+  </div>
+</form>
+<script type="text/javascript">
+
+    function del(id){
+        if(confirm("您确定要删除吗?")){
+
+        }
+    }
+   function change(id){
+        alert("暂时无法修改")
+   }
+    function error(){
+        alert("功能暂未开放")
+    }
+    $("#checkall").click(function(){
+        $("input[name='id[]']").each(function(){
+            if (this.checked) {
+                this.checked = false;
+            }
+            else {
+                this.checked = true;
+            }
+        });
+    })
+
+    function DelSelect(){
+        var Checkbox=false;
+        $("input[name='id[]']").each(function(){
+            if (this.checked==true) {
+                Checkbox=true;
+            }
+        });
+        if (Checkbox){
+            var t=confirm("您确认要删除选中的内容吗？");
+            if (t==false) return false;
+        }
+        else{
+            alert("请选择您要删除的内容!");
+            return false;
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <title></title>
+  <link rel="stylesheet" href="css/pintuer.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/pintuer.js"></script>
+</head>
+<body>
+<div class="tab">
+  <div class="tab-head">
+    <strong>商品管理</strong> <span class="tab-more"><a href="#">更多</a></span>
+    <ul class="tab-nav">
+      <li class="active"><a href="#tab-start">商品盘点</a> </li>
+      <li><a href="#tab-css">商品入库</a> </li>
+      <li><a href="#tab-units">货品添加</a> </li>
+    </ul>
+  </div>
+  <div class="tab-body">
+    <div class="tab-panel active" id="tab-start">
+      <button class="button win-refresh icon-refresh">
+        刷新</button>
+      <button class="button win-print icon-print">
+        打印</button>
+      <button class="button win-close icon-times-circle">
+        关闭</button>
+      <!--控件-->
+      <div class="padding border-top" style="margin-top: 5px">
+        <ul class="search">
+          <li>搜索区间：
+            <select name="cid" class="input" style="width:200px; line-height:17px;display:inline-block;" onchange="changesearch()">
+              <option value="">请选择区间</option>
+              <option value="">2010-2012</option>
+              <option value="">2012-2014</option>
+              <option value="">2014-2016</option>
+              <option value="">2016-2018</option>
+            </select>
+          </li>
+          <li>商品编号：
+            <input type="text" class="input tips"  style="width:80px; line-height:17px;display:inline-block;" value="" data-toggle="hover" data-place="right" />
+          </li>
+          <li>商品名：
+            <input type="search" class="input tips" placeholder="输入商品名" style="width:120px; display:inline-block;" value="" data-toggle="hover" data-place="right" />
+            <a href="javascript:void(0)" class="button border-main icon-search" onclick="error()" > 搜索</a></li>
+        </ul>
+      </div>
+
+      <!--商品盘点表单-->
+       <div style="border-top: 3px solid  #dde3e6; margin-top: 5px">
+         <table class="table table-hover text-center">
+         <tr>
+           <th width="120">编号</th>
+           <th>商品名</th>
+           <th>单位</th>
+           <th>数量</th>
+           <th>售价价（元）</th>
+           <th>批发价（元）</th>
+           <th width="20%">供应商</th>
+           <th>生产日期</th>
+           <th width="120">保质期</th>
+           <th>备注</th>
+           <th>操作</th>
+         </tr>
+         <tr>
+           <td><input type="checkbox" name="id[]" value="1" />
+             1220</td>
+           <td>花生</td>
+           <td>kg</td>
+           <td>4500</td>
+           <td>4.5</td>
+           <td>1.5</td>
+           <td>xx农副产品基地</td>
+           <td>2017-11-21</td>
+           <td>三年</td>
+           <td>不好吃</td>
+           <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a></div></td>
+         </tr>
+         <tr>
+         <td><input type="checkbox" name="id[]" value="1" />
+           1222</td>
+         <td>焦糖</td>
+         <td>g</td>
+         <td>2000</td>
+         <td>9</td>
+         <td>1.5</td>
+         <td>xx加工厂</td>
+         <td>2017-11-22</td>
+         <td>一年</td>
+         <td>甜，吃多腻</td>
+         <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a></div></td>
+       </tr>
+         <tr>
+           <td><input type="checkbox" name="id[]" value="1" />
+             1222</td>
+           <td>巧克力</td>
+           <td>盒</td>
+           <td>500</td>
+           <td>80</td>
+           <td>5.2</td>
+           <td>xx食品有限公司</td>
+           <td>2017-6-7</td>
+           <td>两年</td>
+           <td>黑巧克力</td>
+           <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a></div></td>
+         </tr>
+         <tr>
+           <td><input type="checkbox" name="id[]" value="1" />
+             1220</td>
+           <td>花生</td>
+           <td>kg</td>
+           <td>4500</td>
+           <td>4.5</td>
+           <td>1.5</td>
+           <td>xx农副产品基地</td>
+           <td>2017-11-21</td>
+           <td>三年</td>
+           <td>不好吃</td>
+           <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a><a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a></div></td>
+         </tr>
+         <tr>
+           <td colspan="12"><div class="pagelist"> <a href="">上一页</a> <span class="current">1</span><a href="">2</a><a href="">3</a><a href="">下一页</a><a href="">尾页</a> </div></td>
+         </tr>
+       </table>
+       </div>
+      </div>
+    <div class="tab-panel" id="tab-css">
+      功能完善中。。</div>
+    <div class="tab-panel" id="tab-units">
+      功能完善中。。</div>
+  </div>
+</div>
+</body></html>

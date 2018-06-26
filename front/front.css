@@ -1,0 +1,109 @@
+
+.head{
+    width:auto;
+}
+.head_1{
+    width: 1180px;
+    margin: 0 auto;
+    padding: 5px 0;
+    height: 75px;
+}
+.head_2{
+    height: 57px;
+    border: 1px solid #b0b0b0;
+    background-color: #ffffff;
+}
+#logo{
+    width: 314px;
+    height: 65px;
+    float: left;
+}
+#logo img{
+    width: 100%;
+    height: 100%;
+}
+.head_1 .input-group{
+    width: 422px;
+    height: 65px;
+    float: left;
+}
+.head_1 .input-group .form-control{
+    margin:16px auto;
+}
+.head_right{
+    width: 300px;
+    height: 58px;
+    float:right;
+}
+.head_nav{
+    width: 1180px;
+    height: 75px;
+    margin: 0 auto;
+    padding: 8px 10px;
+}
+.carousel-control{
+    padding-top:255px;
+}
+/*  导航栏及头部    */
+.navbar{position: fixed; top:0;left:0;z-index:9997; width: 100%;}
+.target {
+    position: absolute;
+    border-bottom: 4px solid transparent;
+    z-index: -1;
+    -webkit-transform: translateX(-60px);
+    transform: translateX(-60px);
+}
+.header{
+    width: 100%;
+    height:620px;
+    padding-top: 53px;
+    margin: 0 auto;
+    position: relative;
+}
+.header .one{
+    height:550px;
+    width: 100%;
+    background:url("../images/091700j444iybabjyoba64.jpeg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+.header .two{
+    height:550px;
+    background:url("../images/u=3874782318,2929085832&fm=23&gp=0.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+.header .three{
+    height:550px;
+    background:url("../images/u=3874782318,2929085832&fm=23&gp=0.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+.pic{
+    background:url("../images/y.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100px;height:100px;border-radius:100px;
+    margin: 0 auto;
+}
+.pic a{
+    display:block;
+    width:100px;  height:100px;border-radius:100px;
+}
+.jumbotron{
+    background-color: transparent;
+    color: red;
+    padding-top: 10px;
+}
+.carousel-control{
+    padding-top: 220px;
+}
+h1,h2,h3{
+    text-align: center;
+}

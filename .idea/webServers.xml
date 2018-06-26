@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="911d250b-6553-483a-8c1c-dabcf86964bc" name="pipi" url="http://localhost:8086/demo">
+        <fileTransfer port="0" mountedRoot="F:\wamp64\www\demo" accessType="MOUNT" />
+      </webServer>
+      <webServer id="c7642dee-e395-4004-9b1f-945239bbfc97" name="localhost" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
